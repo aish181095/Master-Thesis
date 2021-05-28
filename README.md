@@ -7,7 +7,7 @@ sidartheode.m and Curvefit_model.m files- Implementing the SIDARTHE model
 
 fitting_code.m - Curve fitting optimisation function 
 
-regression_co-efficient - Goodness of fit for the fitted model compared to actual cases
+regression_co-efficient - Goodness of fit of the fitted model compared to actual cases
 
 parameter_distribution.m - Generate parameter distributions for each model parameter and calculate the 97.5% Confidence intervals.
 
