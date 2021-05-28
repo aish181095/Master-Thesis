@@ -69,3 +69,23 @@ end
 
 %save the '.mat' file
 save param_dist
+
+
+%%
+%Estimate the 97.5% confidence intervals for the parameter distributions
+
+%rearrange the parameters.
+Phatss_values=Phatss_values(:,[1,2,3,2,4,5,6,5,6,7,8,9,10,11,9,12]);
+
+n=16; % number of model parameters
+%create empty arrays.
+SEM=zeros(1,n); %Standard Error of Mean
+ts=zeros(n,2);  % z-scores
+CI=zeros(n,2);   %confidence intervals
+mean_param_values=zeros(1,n); %mean of the distribution
+for i =1:n
+mean_param_values(i)=mean(Phatss_values(:,i));    
+SEM(i) = std(Phatss_values(:,i))/sqrt(length(Phatss_values));               % Standard Error
+ts(i,:) = tinv([0.025  0.975],length(Phatss_values)-1);      % z-Score
+CI(i,:) = mean(Phatss_values(:,i)) + ts(i,:)*SEM(i); %Confidence Interval   
+end
