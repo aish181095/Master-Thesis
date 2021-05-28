@@ -1,17 +1,17 @@
 # Using SIDARTHE model to study the epidemic evolution and analyse different strategies to contain the COVID 19 spread in Italy.
 
 
-italy_data_phase - Import and divide the data based on the phase
+italy_data_phase.m - Import and divide the data based on the phase
 
 sidartheode.m and Curvefit_model.m files- Implementing the SIDARTHE model
 
-fitting_code.m - Curve fitting optimisation function for 100 start values
+fitting_code.m - Curve fitting optimisation function 
 
 regression_co-efficient - Goodness of fit for the fitted model compared to actual cases
 
 parameter_distribution.m - Generate parameter distributions for each model parameter and calculate the 97.5% Confidence intervals.
 
-sensitivity_analysis.m - Analyse sensitivity of parameter devaition on model equilibria
+sensitivity_analysis.m - Analyse sensitivity of parameter deviation on model equilibria
 
 plots.m - Generate plots for model fit, parameter distribution.
 
