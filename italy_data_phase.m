@@ -49,3 +49,7 @@ lockdown_italy_1=table2array(combined_table(27:41,:));%14 days
 %%
 %32 days after lockdown
 lockdown_italy_1=table2array(combined_table(41:73,:));%32 days
+
+%%
+%data for the entire 74 days 
+italy_data=table2array(combined_table(1:73,:));
