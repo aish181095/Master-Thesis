@@ -55,3 +55,27 @@ r4=parameters(13)+parameters(15);
 
 
 basic_r0=((parameters(1)*r2*r3*r4+parameters(5)*parameters(2)*r3*r4+parameters(3)*parameters(6)*r2*r4+parameters(4)*parameters(8)*parameters(5)*r3+parameters(4)*parameters(6)*parameters(10)*r2)/(r1*r2*r3*r4))
+
+
+%%
+%calculate the actual vs perceived Case fatality rate (CFR)
+fit=Curvefit_model(parameters);%fitted model values
+
+%Case fataility rate for each day
+for i = 2:14
+M(i)=fit(i,8)/(fit(1,1)-fit(i,1));
+P(i)=fit(i,8)/((parameters(5)*r3+(parameters(10)+parameters(11))*parameters(6))*(fit(1,2)+fit(1,1)-fit(i,1)-fit(i,2))/(r1*r3)+(parameters(10)+parameters(11))*(fit(1,4)-fit(i,4))/r3);
+end
+
+%Case fatality rate 
+Mbar=M(length(t));%actual CFR
+Pbar=P(length(t));% perceived CFR
+
+% Case fatality rate from formulas
+Mbar1=fit(end,8)/(fit(1,1)-fit(end,1));
+Pbar1=fit(end,8)/((parameters(5)*r3+(parameters(10)+parameters(11))*parameters(6))*(fit(1,2)+fit(1,1)-fit(end,1)-fit(end,2))/(r1*r3)+(parameters(10)+parameters(11))*(fit(1,4)-fit(end,4))/r3);
+
+
+
+
+
